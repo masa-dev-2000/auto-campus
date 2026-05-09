@@ -1,12 +1,18 @@
 ---
 name: tech-select
 description: 技術選定・技術比較・アーキテクチャ決定をADRとして記録する。「データベースをどれにすべきか」「STTプロバイダーを比較したい」「技術選定の記録を残したい」という文脈で起動する。
+when_to_use: 技術を選びたい、ライブラリを比較したい、アーキテクチャを決めたい、技術選定の記録を残したい、ADRを作りたい
 allowed-tools: Read Write Bash(ls *) Bash(mkdir *) Bash(git *) WebSearch WebFetch
+argument-hint: "[技術カテゴリ（例: データベース、STTプロバイダー）]"
 effort: medium
 context: fork
 ---
 
 # /tech-select — 技術選定 + ADR 自動生成ワークフロー
+
+## 既存 ADR の確認（自動取得）
+
+!`ls docs/adr/*.md 2>/dev/null | grep -v gitkeep | sort || echo "ADR なし（初回）"`
 
 技術の比較検討を行い、決定内容を ADR（Architecture Decision Record）として記録します。
 「なぜその技術を選んだか」「なぜ他を選ばなかったか」を残すことで、Claude が将来同じ議論を繰り返さなくなります。
