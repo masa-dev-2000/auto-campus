@@ -96,8 +96,9 @@
 | LLM（リサーチ） | Claude Sonnet 4.6 | 品質優先、視覚化整理向け |
 | リサーチ | Perplexity API | 出典付き検索、500ms以内 |
 | バックエンド | Python / FastAPI | STT/LLM 連携の実績多数 |
-| フロントエンド | React / Next.js | エコシステムの豊富さ |
-| 音声キャプチャ | Electron | 対面・オンライン両対応（ブラウザは不可） |
+| フロントエンド | React / Vite（Tauri 内） | Vite は高速ビルド、Tauri でデスクトップアプリ化 |
+| デスクトップシェル | Tauri | Electron より軽量（5〜10MB）、クロスプラットフォーム |
+| 音声キャプチャ | sounddevice（Phase 0: 対面マイクのみ） | Phase 2 以降でシステム音声対応を検討 |
 
 ### 代替案（検討済み）
 
