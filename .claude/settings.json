@@ -24,11 +24,10 @@
       "Bash(git checkout*)",
       "Bash(git switch*)",
       "Bash(git fetch*)",
-      "Bash(git pull*)"
-    ],
-    "deny": [
+      "Bash(git pull*)",
       "Bash(git push*)"
-    ]
+    ],
+    "deny": []
   },
   "hooks": {
     "SessionStart": [
