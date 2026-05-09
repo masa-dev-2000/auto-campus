@@ -1,12 +1,18 @@
 ---
 name: research
 description: 競合分析・市場調査・技術比較・ユーザーニーズ調査。「〇〇を調べて」「競合を分析して」「技術Aと技術Bを比較して」という文脈で起動する。判断材料となる情報を出典付きレポートにまとめる。
+when_to_use: 競合を調べたい、市場を調査したい、技術を比較したい、ユーザーの不満やニーズを調べたい、判断材料が欲しい
 allowed-tools: Read Write Bash(mkdir *) Bash(git *) WebSearch WebFetch
+argument-hint: "[リサーチテーマ（省略可）]"
 effort: medium
 context: fork
 ---
 
 # /research — 競合・市場・技術リサーチ ワークフロー
+
+## 既存リサーチの確認（自動取得）
+
+!`ls docs/research/ 2>/dev/null | head -10 || echo "docs/research/ なし（初回）"`
 
 Web 検索で信頼性の高いリサーチレポートを生成します。
 引数なしで呼ぶとヒアリングから開始します。
