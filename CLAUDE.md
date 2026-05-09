@@ -32,8 +32,9 @@ docs/
 - リサーチ: Perplexity API
 - バックエンド: Python / FastAPI（uv で管理）
 - フロントエンド: React / Vite（Tauri 内に組み込み）
-- デスクトップシェル: Tauri（Rust）
+- デスクトップシェル: Tauri（Rust）— macOS / Windows / Linux クロスプラットフォーム
 - 音声キャプチャ: 対面マイクのみ（Phase 0）
+- 注意: macOS=WebKit / Windows=WebView2(Chromium) / Linux=WebKitGTK でエンジンが異なる
 
 ## コマンド
 
