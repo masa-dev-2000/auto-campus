@@ -2,7 +2,7 @@
 name: init
 description: 新リポジトリに .claude/ を移植した直後に実行。CLAUDE.md・docs/ 構造・.gitignore を生成し、次に打つコマンドまで案内する。
 when_to_use: プロジェクトを始めたい、初期セットアップをしたい、.claude/ を移植した、新しいリポジトリで開発を始めたい
-allowed-tools: Read Write Bash(git *) Bash(mkdir *) Bash(ls *) Bash(touch *) Bash(test *)
+allowed-tools: Read Write Bash(git *) Bash(mkdir *) Bash(ls *) Bash(touch *) Bash(cp *) Bash(test *)
 effort: low
 context: fork
 ---
@@ -11,7 +11,7 @@ context: fork
 
 ## 現在の状態を確認（自動取得）
 
-!`echo "--- 現在の状態 ---" && echo "Git: $(git rev-parse --is-inside-work-tree 2>/dev/null && echo '初期化済み' || echo '未初期化')" && echo "CLAUDE.md: $(test -f CLAUDE.md && echo '存在する（上書き確認が必要）' || echo 'なし（新規作成します）')" && echo "docs/: $(test -d docs && echo '存在する' || echo 'なし（作成します）')" && echo "------------------"`
+!`echo "--- 現在の状態 ---" && echo "Git: $(git rev-parse --is-inside-work-tree 2>/dev/null && echo '初期化済み' || echo '未初期化')" && echo "CLAUDE.md: $(test -f CLAUDE.md && echo '存在する（上書き確認あり）' || echo 'なし → 新規作成')" && echo "docs/: $(test -d docs && echo '存在する' || echo 'なし → 新規作成')" && echo "------------------"`
 
 ---
 
@@ -21,7 +21,10 @@ context: fork
 
 作成されるもの:
 - `CLAUDE.md` — Claude が毎セッション読む「プロジェクトの記憶」
-- `docs/` フォルダ — 要件定義・フェーズ計画・ADR を置く場所
+- `docs/cc-knowhow.md` — Claude Code のノウハウ集
+- `docs/dev-methodology.md` — 開発プロジェクトの進め方ガイド
+- `docs/project/` — 要件定義・フェーズ計画の置き場所
+- `docs/adr/` — 技術選定の記録の置き場所
 - `.gitignore` — 基本的な除外設定
 
 完了後に「次に打つコマンド」を案内します。
@@ -47,7 +50,7 @@ CLAUDE.md がすでに存在します。上書きしてよいですか？
 以下を **1つのメッセージでまとめて** 質問してください:
 
 ```
-3つだけ教えてください。答えが短くて全然OK です。
+3つだけ教えてください。答えが短くて全然 OK です。
 
 1. プロジェクト名は？（例: meeting-helper, todo-app）
 2. 一言でいうと何を作りますか？（例: 会議の文字起こしアプリ）
@@ -60,7 +63,7 @@ CLAUDE.md がすでに存在します。上書きしてよいですか？
 
 ## STEP 3: ファイル生成
 
-### CLAUDE.md を生成
+### 3-1: CLAUDE.md を生成
 
 ヒアリング回答を埋めて `CLAUDE.md` を作成してください:
 
@@ -78,10 +81,11 @@ CLAUDE.md がすでに存在します。上書きしてよいですか？
 
 \`\`\`
 docs/
-├── project/
-│   ├── overview.md      # 要件定義（/project-prd で生成）
-│   └── phases.md        # フェーズ計画（/project-plan で生成）
-└── adr/                 # 技術選定の記録（/tech-select で生成）
+├── cc-knowhow.md        # Claude Code のノウハウ集
+├── dev-methodology.md   # 開発プロジェクトの進め方
+└── project/
+    ├── overview.md      # 要件定義（/project-prd で生成）
+    └── phases.md        # フェーズ計画（/project-plan で生成）
 \`\`\`
 
 ## 開発スタック
@@ -103,7 +107,7 @@ docs/
 次のステップ: /new-project を実行
 ```
 
-### docs/ フォルダ構造を作成
+### 3-2: docs/ フォルダ構造を作成
 
 ```bash
 mkdir -p docs/project
@@ -111,7 +115,16 @@ mkdir -p docs/adr
 touch docs/adr/.gitkeep
 ```
 
-### .gitignore を作成（存在しない場合のみ）
+### 3-3: ノウハウドキュメントをコピー
+
+`.claude/templates/` からプロジェクトフォルダにコピーしてください:
+
+```bash
+cp .claude/templates/cc-knowhow.md docs/cc-knowhow.md
+cp .claude/templates/dev-methodology.md docs/dev-methodology.md
+```
+
+### 3-4: .gitignore を作成（存在しない場合のみ）
 
 存在する場合はスキップ。存在しない場合は以下を作成:
 
@@ -156,9 +169,11 @@ git が未初期化の場合は `git init` を実行してから進む。
 
 以下の順番で **1ファイル1コミット** でコミット:
 
-1. `.gitignore` があれば先にコミット
-2. `docs/adr/.gitkeep` をコミット
-3. `CLAUDE.md` をコミット
+1. `.gitignore`（あれば先に）
+2. `docs/adr/.gitkeep`
+3. `docs/cc-knowhow.md`
+4. `docs/dev-methodology.md`
+5. `CLAUDE.md`
 
 ---
 
@@ -170,10 +185,12 @@ git が未初期化の場合は `git init` を実行してから進む。
 セットアップ完了！ 🎉
 
 作成したファイル:
-  CLAUDE.md          — プロジェクトの記憶（Claude が毎回読みます）
-  docs/project/      — 要件定義・フェーズ計画の置き場所
-  docs/adr/          — 技術選定の記録の置き場所
-  .gitignore         — 除外設定
+  CLAUDE.md              — プロジェクトの記憶（Claude が毎回読みます）
+  docs/cc-knowhow.md     — Claude Code のノウハウ集
+  docs/dev-methodology.md — 開発の進め方ガイド
+  docs/project/          — 要件定義・フェーズ計画の置き場所
+  docs/adr/              — 技術選定の記録の置き場所
+  .gitignore             — 除外設定
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 次のステップ（この順番でやります）
@@ -183,9 +200,8 @@ STEP 1: 要件定義
   /new-project
   → 5つの質問に答えるだけで要件定義が完成します
 
-STEP 2: 競合リサーチ
+STEP 2: 競合リサーチ（/new-project が自動で呼びます）
   /project-research
-  → Webで競合を自動調査します（/new-project が自動で呼びます）
 
 STEP 3: PRD（製品要件書）の作成
   /project-prd
@@ -193,7 +209,7 @@ STEP 3: PRD（製品要件書）の作成
 
 STEP 4: 技術選定 + フェーズ計画
   /project-plan
-  → 技術スタックを決めて、Phase 0 から始める実装計画を作ります
+  → 技術スタックを決めて Phase 0 の実装計画を作ります
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 全部まとめて一気にやりたい場合:
@@ -209,4 +225,5 @@ STEP 4: 技術選定 + フェーズ計画
 
 - STEP 2 のヒアリングは省略しないこと。たった3問なので必ず聞く
 - `.gitignore` はすでに存在する場合は上書きしない
+- `docs/cc-knowhow.md`・`docs/dev-methodology.md` は `.claude/templates/` からコピーする。直接書かない
 - 完了報告のコマンド案内は省略しない。これが一番重要
