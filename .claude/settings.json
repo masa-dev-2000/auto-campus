@@ -1,4 +1,12 @@
 {
+  "skillOverrides": {
+    "new-project": "name-only",
+    "project-research": "name-only",
+    "project-prd": "name-only",
+    "project-plan": "name-only",
+    "research": "name-only",
+    "tech-select": "name-only"
+  },
   "permissions": {
     "allow": [
       "Bash(python*)",
