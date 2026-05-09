@@ -10,4 +10,4 @@
 
 「この中で特に対策を強化したいリスクはありますか？」と確認する。
 
-@../../templates/lib/confirm-gate.md
+@../../confirm-gate/SKILL.md

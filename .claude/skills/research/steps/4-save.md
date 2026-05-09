@@ -13,4 +13,4 @@
 
 技術比較のリサーチだった場合: 続けて `/tech-select` を実行して ADR を作成することを提案する。
 
-@../../templates/lib/git-commit.md
+@../../git-commit/SKILL.md

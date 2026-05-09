@@ -18,4 +18,4 @@
 - 重視する観点（コスト / 速度 / 精度 / 学習コスト 等、上位3つ）
 - 除外する情報
 
-@../../templates/lib/confirm-gate.md
+@../../confirm-gate/SKILL.md

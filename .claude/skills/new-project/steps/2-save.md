@@ -9,4 +9,4 @@
 - 一言サマリー（「つまり、〇〇が〇〇するために〇〇を作る。」）
 - 進捗チェックリスト（ヒアリングを `[x]` に）
 
-@../../templates/lib/git-commit.md
+@../../git-commit/SKILL.md

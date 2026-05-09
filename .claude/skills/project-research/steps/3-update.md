@@ -20,4 +20,4 @@
 
 「進捗チェックリスト」の「競合・市場リサーチ」を `[x]` にする。
 
-@../../templates/lib/git-commit.md
+@../../git-commit/SKILL.md

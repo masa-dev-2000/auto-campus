@@ -18,4 +18,4 @@
 3. 除外条件はありますか？
 ```
 
-@../../templates/lib/confirm-gate.md
+@../../confirm-gate/SKILL.md

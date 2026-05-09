@@ -3,4 +3,4 @@
 `docs/project/overview.md` に PRD 全文を保存する。
 STATE.md の「進捗チェックリスト」の「PRD + プレモーテム」を `[x]` にする。
 
-@../../templates/lib/git-commit.md
+@../../git-commit/SKILL.md

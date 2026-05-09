@@ -10,4 +10,4 @@ git が未初期化の場合は `git init` を先に実行する。
 4. `docs/dev-methodology.md`
 5. `CLAUDE.md`
 
-@../../templates/lib/git-commit.md
+@../../git-commit/SKILL.md

@@ -15,4 +15,4 @@ P0 機能を実現するための技術カテゴリを列挙し、各カテゴ�
 
 詳細な比較検討が必要なカテゴリは `/tech-select` の実行を提案する。
 
-@../../templates/lib/confirm-gate.md
+@../../confirm-gate/SKILL.md

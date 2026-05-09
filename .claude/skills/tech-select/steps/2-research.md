@@ -1,6 +1,6 @@
 ## STEP 2: 候補の調査
 
-@../../templates/lib/web-search.md
+@../../web-search/SKILL.md
 
 **候補の選び方:**
 - 業界標準（デファクトスタンダード）を必ず1つ含める

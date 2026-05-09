@@ -16,7 +16,7 @@ context: fork
 
 ---
 
-@../../templates/lib/yolo-mode.md
+@../../yolo-mode/SKILL.md
 
 @steps/1-read.md
 

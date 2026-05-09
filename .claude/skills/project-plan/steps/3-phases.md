@@ -35,4 +35,4 @@
 **完了条件**: [P0 機能がすべて動く状態]
 ```
 
-@../../templates/lib/confirm-gate.md
+@../../confirm-gate/SKILL.md

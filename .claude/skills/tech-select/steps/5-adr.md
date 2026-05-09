@@ -15,4 +15,4 @@ ADR に必ず含めるもの:
 1. `CLAUDE.md` の開発スタックセクションを最新に更新する
 2. コミットする
 
-@../../templates/lib/git-commit.md
+@../../git-commit/SKILL.md

@@ -1,6 +1,6 @@
 ## STEP 2: リサーチ実行
 
-@../../templates/lib/web-search.md
+@../../web-search/SKILL.md
 
 **調査項目:**
 - このアイデアと同じ問題を解決する既存ツール（上位5件）
@@ -9,4 +9,4 @@
 
 **`--yolo` でない場合**: リサーチ結果を出力して確認を取る。
 
-@../../templates/lib/confirm-gate.md
+@../../confirm-gate/SKILL.md
