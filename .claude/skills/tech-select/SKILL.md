@@ -17,7 +17,7 @@ context: fork
 技術の比較検討を行い、決定内容を ADR（Architecture Decision Record）として記録します。
 「なぜその技術を選んだか」「なぜ他を選ばなかったか」を残すことで、Claude が将来同じ議論を繰り返さなくなります。
 
-ADR テンプレート参照: @../../docs/templates/adr.md
+ADR テンプレート参照: @../../templates/adr.md
 加重マトリクス参照: @templates/weighted-matrix.md
 
 使い方:
