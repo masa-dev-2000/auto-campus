@@ -1,0 +1,13 @@
+---
+name: git-commit
+description: ファイルを保存してコミットする。1ファイル1コミットの規則に従う。各スキルの保存ステップから参照される。
+when_to_use: ファイルを保存してコミットしたいとき
+allowed-tools: Bash(git *)
+effort: low
+---
+
+## コミットの振る舞い
+
+- **1ファイル1コミット**を徹底する
+- `git add <ファイル名>` でファイルを個別に指定する（`git add .` は使わない）
+- コミットメッセージは `feat:` / `docs:` / `fix:` / `chore:` / `refactor:` のプレフィックスをつける
