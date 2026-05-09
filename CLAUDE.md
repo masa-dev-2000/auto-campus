@@ -23,16 +23,17 @@ docs/
     └── phases.md        # フェーズ・タスク一覧
 ```
 
-## 開発スタック（予定）
+## 開発スタック
 
 - STT: Deepgram Nova-3（WebSocketストリーミング）
 - VAD: Silero VAD
 - LLM（即時）: Claude Haiku 4.5
 - LLM（リサーチ・整理）: Claude Sonnet 4.6
 - リサーチ: Perplexity API
-- バックエンド: Python / FastAPI
-- フロントエンド: React / Next.js
-- 音声キャプチャ: Electron（対面・オンライン両対応）
+- バックエンド: Python / FastAPI（uv で管理）
+- フロントエンド: React / Vite（Tauri 内に組み込み）
+- デスクトップシェル: Tauri（Rust）
+- 音声キャプチャ: 対面マイクのみ（Phase 0）
 
 ## コマンド
 
