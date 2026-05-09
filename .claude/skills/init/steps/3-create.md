@@ -2,7 +2,7 @@
 
 ### CLAUDE.md
 
-ヒアリング回答を埋めて作成する:
+プロジェクト名を埋めて作成する:
 
 ```markdown
 # [プロジェクト名]
@@ -11,8 +11,7 @@
 
 ## プロジェクト概要
 
-[一言説明]
-ターゲット: [誰のためか]
+（/new-project のヒアリングシート完了後に追記）
 
 ## ドキュメント構造
 
@@ -21,6 +20,7 @@ docs/
 ├── cc-knowhow.md        # Claude Code のノウハウ集
 ├── dev-methodology.md   # 開発プロジェクトの進め方
 └── project/
+    ├── hearing.md       # ヒアリングシート（/new-project で生成）
     ├── overview.md      # 要件定義（/project-prd で生成）
     └── phases.md        # フェーズ計画（/project-plan で生成）
 \`\`\`
@@ -40,7 +40,7 @@ docs/
 
 ## フェーズ状況
 
-現在: 要件定義前
+現在: 環境セットアップ完了
 次のステップ: /new-project を実行
 ```
 
