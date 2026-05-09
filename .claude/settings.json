@@ -1,0 +1,67 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python*)",
+      "Bash(uvicorn*)",
+      "Bash(pip*)",
+      "Bash(npm*)",
+      "Bash(npx*)",
+      "Bash(node*)",
+      "Bash(ls*)",
+      "Bash(find*)",
+      "Bash(grep*)",
+      "Bash(cat*)",
+      "Bash(mkdir*)",
+      "Bash(touch*)",
+      "Bash(cp*)",
+      "Bash(mv*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git branch*)",
+      "Bash(git checkout*)",
+      "Bash(git switch*)",
+      "Bash(git fetch*)",
+      "Bash(git pull*)"
+    ],
+    "deny": [
+      "Bash(git push*)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"=== auto-campus セッション開始 ===\"; echo \"ブランチ: $(git branch --show-current 2>/dev/null || echo 'N/A')\"; echo \"最終コミット: $(git log --oneline -1 2>/dev/null || echo 'なし')\"; echo \"フェーズ: docs/project/phases.md を参照\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=\"$CLAUDE_TOOL_INPUT_FILE_PATH\"; if [[ \"$FILE\" == *.py ]]; then python -m black \"$FILE\" 2>/dev/null || true; elif [[ \"$FILE\" == *.ts || \"$FILE\" == *.tsx || \"$FILE\" == *.js || \"$FILE\" == *.jsx ]]; then npx prettier --write \"$FILE\" 2>/dev/null || true; fi"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "BRANCH=$(git branch --show-current 2>/dev/null); if [[ \"$BRANCH\" == 'main' ]]; then echo 'main ブランチへの直接編集は禁止です。feature ブランチを作成してください。'; exit 2; fi"
+          }
+        ]
+      }
+    ]
+  }
+}
