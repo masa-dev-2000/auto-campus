@@ -6,6 +6,21 @@
 
 ---
 
+## 偉人エージェント配置
+
+統括マネージャー: **Fred Brooks**（`/fred-brooks`）— フェーズ移行・エージェント呼び出し判断・概念的整合性の維持
+
+| フェーズ | 主担当エージェント | 役割 |
+|---|---|---|
+| **Phase 0** PoC | Kent Beck / John Carmack / Kelsey Hightower | 最小実装・レイテンシ予算・初回セットアップ |
+| **Phase 1** コア実装 | Uncle Bob / Dan Abramov / Donald Knuth | アーキテクチャ・React設計・バッファデータ構造 |
+| **Phase 2** 自動補強 | Andrej Karpathy / Don Norman / Martin Fowler | LLM統合・補強UX・リファクタリング |
+| **Phase 3** リリース | Kelsey Hightower / Leslie Lamport / John Carmack | 配布・障害耐性・最終性能チューニング |
+
+迷ったら Fred Brooks に「このフェーズで誰を呼ぶべきか」を聞く。
+
+---
+
 ## 着手前に決める必要があること（決定済み 2026-05-09）
 
 - [x] **使用シーン**: 個人利用のみ
