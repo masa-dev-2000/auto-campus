@@ -43,7 +43,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo \"=== auto-campus セッション開始 ===\"; echo \"ブランチ: $(git branch --show-current 2>/dev/null || echo 'N/A')\"; echo \"最終コミット: $(git log --oneline -1 2>/dev/null || echo 'なし')\"; echo \"フェーズ: docs/project/phases.md を参照\""
+            "command": "PROJECT=$(head -1 CLAUDE.md 2>/dev/null | sed 's/^# //' || basename \"$(pwd)\"); echo \"=== $PROJECT セッション開始 ===\"; echo \"ブランチ: $(git branch --show-current 2>/dev/null || echo 'N/A')\"; echo \"最終コミット: $(git log --oneline -1 2>/dev/null || echo 'なし')\"; echo \"フェーズ: $(test -f docs/project/phases.md && grep '\\*\\*Phase' docs/project/phases.md | head -1 || echo 'docs/project/phases.md を参照')\""
           }
         ]
       }
