@@ -25,7 +25,7 @@ STATE.md が存在しない、または競合分析が未完了の場合: **「�
 ## STEP 1: PRD 生成
 
 STATE.md のヒアリング回答・競合分析をもとに PRD を生成。
-テンプレート参照: @../../docs/templates/prd.md
+テンプレート参照: @../../templates/prd.md
 
 ```markdown
 ## プロダクト概要（1文）
