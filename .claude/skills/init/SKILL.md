@@ -2,7 +2,7 @@
 name: init
 description: 新リポジトリに .claude/ を移植した直後に実行。CLAUDE.md・docs/ 構造・.gitignore を生成し、次に打つコマンドまで案内する。
 when_to_use: プロジェクトを始めたい、初期セットアップをしたい、.claude/ を移植した、新しいリポジトリで開発を始めたい
-allowed-tools: Read Write Bash(git *) Bash(mkdir *) Bash(ls *) Bash(touch *) Bash(cp *) Bash(test *)
+allowed-tools: Read Write Bash(mkdir *) Bash(ls *) Bash(touch *) Bash(cp *) Bash(test *)
 effort: low
 context: fork
 ---

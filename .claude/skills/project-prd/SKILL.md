@@ -2,7 +2,7 @@
 name: project-prd
 description: /project-researchの後に実行。STATE.mdの情報をもとにPRD（要件定義）を生成しプレモーテム分析を行う。新プロジェクト開始フローのPhase 3。
 when_to_use: 競合リサーチ完了後にPRDを作りたい、要件定義をしたい、プロジェクトの要件を整理したい
-allowed-tools: Read Write Bash(git *) WebSearch
+allowed-tools: Read Write WebSearch
 argument-hint: "[--yolo で確認なし実行]"
 effort: high
 context: fork

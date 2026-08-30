@@ -379,13 +379,13 @@ Claude の行動に頼らず、確実に実行したい処理をシェルコマ�
 - `~/.claude/settings.json` → 全プロジェクト共通
 
 ### よくある使い方
+
+コマンドフックはツール権限の確認外で自動実行される。`npx`・`npm`・`python`・`node` などの
+パッケージランナーやインタープリタは登録せず、固定された読み取り専用チェックや保護処理に限定する。
+
 ```json
 {
   "hooks": {
-    "PostToolUse": [{
-      "matcher": "Write|Edit",
-      "hooks": [{"type": "command", "command": "npx prettier --write \"$CLAUDE_TOOL_INPUT_FILE_PATH\" 2>/dev/null || true"}]
-    }],
     "PreToolUse": [{
       "matcher": "Edit|Write",
       "hooks": [{"type": "command", "command": "if [[ $(git branch --show-current) == 'main' ]]; then echo 'main ブランチへの直接編集は禁止'; exit 2; fi"}]
@@ -397,7 +397,6 @@ Claude の行動に頼らず、確実に実行したい処理をシェルコマ�
 ### 実例（先人）
 | フック | 内容 | 出典 |
 |---|---|---|
-| PostToolUse 自動フォーマット | Prettier/black を毎回実行 | Boris Cherny, ChrisWiles |
 | PreToolUse main 保護 | main への直接編集をブロック | ChrisWiles/claude-code-showcase |
 | PostToolUse 絵文字除去 | 全ファイルの絵文字を自動削除 | ZacheryGlass |
 | Stop フック | 「残作業があれば続けろ」リマインド | Boris Cherny |

@@ -2,7 +2,6 @@
 name: git-commit
 description: ファイルを保存してコミットする。1ファイル1コミットの規則に従う。各スキルの保存ステップから参照される。
 when_to_use: ファイルを保存してコミットしたいとき
-allowed-tools: Bash(git *)
 effort: low
 ---
 

@@ -2,7 +2,7 @@
 name: tech-select
 description: 技術選定・技術比較・アーキテクチャ決定をADRとして記録する。「データベースをどれにすべきか」「STTプロバイダーを比較したい」「技術選定の記録を残したい」という文脈で起動する。
 when_to_use: 技術を選びたい、ライブラリを比較したい、アーキテクチャを決めたい、技術選定の記録を残したい、ADRを作りたい
-allowed-tools: Read Write Bash(ls *) Bash(mkdir *) Bash(git *) WebSearch WebFetch
+allowed-tools: Read Write Bash(ls *) Bash(mkdir *) WebSearch WebFetch
 argument-hint: "[技術カテゴリ（例: データベース、STTプロバイダー）] [--yolo で確認なし実行]"
 effort: medium
 context: fork
